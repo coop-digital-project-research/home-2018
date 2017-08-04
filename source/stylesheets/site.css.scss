@@ -2,3 +2,12 @@
 $white: #ffffff;
 $darker-grey: #333333;
 $offwhite-highlighted-bg: #e6e6e6;
+
+body {
+  background: #f7f7f7;
+  header {
+    &.wrap {
+      background: $white;
+    }
+  }
+}
