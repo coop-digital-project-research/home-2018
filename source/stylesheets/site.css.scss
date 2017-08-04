@@ -11,3 +11,29 @@ body {
     }
   }
 }
+
+.widget {
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+  > a {
+    font-size: 0.6rem;
+    float: right;
+  }
+  > div {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.home-card {
+    font-size: 0.8rem;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
+    background: $white;
+}
+
+.convo-pull-out {
+  font-family: 'AvenirNextLTW01-Medium';
+  font-size: 1.2rem;
+  padding: 1rem;
+}
