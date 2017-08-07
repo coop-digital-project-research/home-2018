@@ -19,6 +19,12 @@ body {
     &.wrap {
       background: $white;
     }
+    span {
+      float: right;
+      height: 100%;
+      display: block;
+      line-height: 2.8;
+    }
   }
   figure {
     padding: 0;
