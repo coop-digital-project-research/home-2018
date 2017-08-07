@@ -2,15 +2,21 @@ body {
   background: #f7f7f7; }
   body header.wrap {
     background: #ffffff; }
+  body header span {
+    float: right;
+    height: 100%;
+    display: block;
+    line-height: 2.8; }
   body figure {
     padding: 0;
     margin: 0;
     overflow: hidden;
     min-width: 80px;
     width: 20%;
-    max-width: 200px; }
-    body figure img {
-      max-width: 400%; }
+    max-width: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
 
 .widget {
   overflow: hidden;
@@ -30,15 +36,23 @@ body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  font-size: 0.8rem;
   width: 100%;
   -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
           box-shadow: 0 2px 3px 0 #e6e6e6;
   background: #ffffff; }
   .home-card p {
-    padding: 1rem; }
+    padding: 1rem;
+    margin: 0; }
+    @media (min-width: 750px) {
+      .home-card p {
+        padding: 2rem; } }
+    .home-card p a {
+      font-family: 'AvenirNextLTW01-Medium'; }
 
-.convo-pull-out {
+.convo-pull-out p {
   font-family: 'AvenirNextLTW01-Medium';
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 1rem; }
+  @media (min-width: 750px) {
+    .convo-pull-out p {
+      font-size: 1.8rem; } }
