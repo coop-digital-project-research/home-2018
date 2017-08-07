@@ -55,6 +55,9 @@ body {
     p {
       padding: 1rem;
       margin: 0;
+      @media (min-width: 750px) {
+        padding: 2rem;
+      }
       a {
         font-family: 'AvenirNextLTW01-Medium';
       }
@@ -66,5 +69,8 @@ body {
     font-family: 'AvenirNextLTW01-Medium';
     font-size: 1.4rem;
     padding: 1rem;
+    @media (min-width: 750px) {
+      font-size: 1.8rem;
+    }
   }
 }
