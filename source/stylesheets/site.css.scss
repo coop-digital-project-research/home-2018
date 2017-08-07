@@ -48,8 +48,10 @@ body {
   overflow: hidden;
   margin: 0 0 2rem 0;
   > a {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     float: right;
+    color: inherit;
+    border-bottom-color: inherit;
   }
   > div {
     margin-bottom: 0.6rem;
