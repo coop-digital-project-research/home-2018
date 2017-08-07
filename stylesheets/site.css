@@ -1,0 +1,44 @@
+body {
+  background: #f7f7f7; }
+  body header.wrap {
+    background: #ffffff; }
+  body figure {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    min-width: 80px;
+    width: 20%;
+    max-width: 200px; }
+    body figure img {
+      max-width: 400%; }
+
+.widget {
+  overflow: hidden;
+  margin: 0 0 2rem 0; }
+  .widget > a {
+    font-size: 0.6rem;
+    float: right; }
+  .widget > div {
+    margin-bottom: 0.6rem; }
+
+.home-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-size: 0.8rem;
+  width: 100%;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  background: #ffffff; }
+  .home-card p {
+    padding: 1rem; }
+
+.convo-pull-out {
+  font-family: 'AvenirNextLTW01-Medium';
+  font-size: 1.2rem;
+  padding: 1rem; }
