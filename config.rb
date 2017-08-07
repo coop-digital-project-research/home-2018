@@ -14,3 +14,5 @@ activate :directory_indexes
 activate :deploy do |deploy|
   deploy.deploy_method = :git
 end
+
+activate :livereload
