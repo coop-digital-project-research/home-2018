@@ -27,9 +27,7 @@ body {
     min-width: 80px;
     width: 20%;
     max-width: 200px;
-    img {
-      max-width: 400%; // Let image fill the card top to bottom
-    }
+    background-size: cover;
   }
 }
 
@@ -56,6 +54,7 @@ body {
     p {
       padding: 1rem;
     }
+
 }
 
 .convo-pull-out {
