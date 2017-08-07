@@ -1,0 +1,65 @@
+// These variables have been created from looking in assets/stylesheets/main.css from line 402
+$white: #ffffff;
+$darker-grey: #333333;
+$offwhite-highlighted-bg: #e6e6e6;
+
+// From Co-op secondary palette
+$base-cadillac: #9f4d73;
+$base-meteorite: #4B2574;
+$base-biscay: #1c3b6b;
+$base-kashmir: #406A91;
+$base-surfie: #117e80;
+$base-thumb: #2E4834;
+$base-oregon: #9e3705;
+$base-tan: #610F1A;
+
+body {
+  background: #f7f7f7;
+  header {
+    &.wrap {
+      background: $white;
+    }
+  }
+  figure {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    min-width: 80px;
+    width: 20%;
+    max-width: 200px;
+    img {
+      max-width: 400%; // Let image fill the card top to bottom
+    }
+  }
+}
+
+.widget {
+  overflow: hidden;
+  margin: 0 0 2rem 0;
+  > a {
+    font-size: 0.6rem;
+    float: right;
+  }
+  > div {
+    margin-bottom: 0.6rem;
+  }
+}
+
+.home-card {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    font-size: 0.8rem;
+    width: 100%;
+    box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
+    background: $white;
+    p {
+      padding: 1rem;
+    }
+}
+
+.convo-pull-out {
+  font-family: 'AvenirNextLTW01-Medium';
+  font-size: 1.2rem;
+  padding: 1rem;
+}
