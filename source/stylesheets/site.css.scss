@@ -45,6 +45,7 @@ body {
 }
 
 .widget {
+  position: relative;
   overflow: hidden;
   margin: 0 0 2rem 0;
   > a {
@@ -54,9 +55,20 @@ body {
     border-bottom-color: inherit;
   }
   > div {
-    margin-bottom: 0.6rem;
-    border-radius: 0.2rem;
-    overflow: hidden;
+    &.card-intro {
+      padding: 1rem 1rem 0rem 1rem;
+      h1 {
+
+      }
+      p {
+
+      }
+    }
+    &.home-card {
+      margin-bottom: 0.6rem;
+      border-radius: 0.2rem;
+      overflow: hidden;
+    }
   }
 }
 
