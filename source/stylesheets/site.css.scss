@@ -138,6 +138,14 @@ body {
         padding: 0 0 1rem 0;
       }
     }
+    &.life-moment {
+      background-color: lighten($darker-grey, 70%);
+      box-shadow: none;
+      padding-bottom: 0;
+    }
+    > .home-card {
+      margin: 2rem 0;
+    }
 }
 
 .convo-pull-out {
