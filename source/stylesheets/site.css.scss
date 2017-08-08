@@ -103,9 +103,6 @@ body {
 }
 
 .home-card {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
     width: 100%;
     box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
     background: $white;
@@ -118,6 +115,16 @@ body {
       a {
         font-family: 'AvenirNextLTW01-Medium';
       }
+    }
+
+    &.split {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+
+    &.form {
+        padding: 2rem;
     }
 }
 
