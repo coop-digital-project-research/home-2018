@@ -46,7 +46,6 @@ body {
 
 .widget {
   position: relative;
-  overflow: hidden;
   margin: 0 0 2rem 0;
   padding: 0 0 0 2rem;
   &:before {
@@ -60,6 +59,17 @@ body {
     background-color: $darker-grey;
     top: 1.8rem;
     left: 0.4rem;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0.2rem;
+    height: calc(100% + 4rem);
+    background-color: $darker-grey;
+    top: -1rem;
+    left: 0.8rem;
+    border-radius: 0.2rem;
   }
   > a {
     font-size: 0.8rem;
