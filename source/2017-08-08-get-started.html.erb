@@ -24,11 +24,34 @@ title: Co-op Platform
             <div class="column large-7">
               <section class="widget">
                 <div class="home-card form">
-                  <h3>We'll get started shortly</h3>
+                  <h1>We'll get started shortly</h1>
                   <p>In order to register with Oldham Council to pay council tax we'll need your address. You can always come back and complete this.</p>
+                  <h2>Address</h2>
                   <fieldset>
-                    <legend>Your address:</legend>
+                    <div class="form-row">
+                      <label for="client_address_line_1">Address line 1</label>
+                      <input class="address" type="text" name="client[address_line_1]" id="client_address_line_1">
+                    </div>
 
+                    <div class="form-row">
+                      <label for="client_address_line_2">Address line 2</label>
+                      <input class="address" type="text" name="client[address_line_2]" id="client_address_line_2">
+                    </div>
+
+                    <div class="form-row">
+                      <label for="client_city">Town or city</label>
+                      <input class="address" type="text" name="client[city]" id="client_city">
+                    </div>
+
+                    <div class="form-row">
+                      <label for="client_county">County</label>
+                      <input class="address" type="text" name="client[county]" id="client_county">
+                    </div>
+
+                    <div class="form-row">
+                      <label for="client_postcode">Postcode</label>
+                      <input class="postcode" type="text" name="client[postcode]" id="client_postcode">
+                    </div>
                     <a href="2017-08-08-starting-moving" class="btn btn-primary">Continue</a>
                   </fieldset>
                 </div>
