@@ -13,6 +13,7 @@ activate :directory_indexes
 
 activate :deploy do |deploy|
   deploy.deploy_method = :git
+  deploy.branch   = 'build'
 end
 
 activate :livereload
