@@ -1,4 +1,4 @@
-# Co-op starter kit
+# Home 2018
 
 ## How to use this
 
