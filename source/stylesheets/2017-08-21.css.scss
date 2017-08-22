@@ -25,32 +25,28 @@ body {
 .widget {
   position: relative;
   margin: 0 0 6rem 0;
-  > a {
+  > a.hide {
     font-size: 0.8rem;
     float: right;
     color: inherit;
     border-bottom-color: inherit;
   }
-  > div {
-    &.card-intro {
-      padding: 1rem 1rem 0rem 1rem;
-      @media (min-width: 750px) {
-        padding: 1rem 2rem 0rem 2rem;
-      }
-    }
-    &.card {
-      margin-bottom: 0.6rem;
-      border-radius: 0.2rem;
-      overflow: hidden;
-    }
-  }
 }
 
-.card {
+a.card {
     width: 100%;
+    margin-bottom: 0.6rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    display: block;
+    color: inherit;
     box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
     background: $white;
     padding: 1rem;
+    border-bottom-color: $offwhite-highlighted-bg;
+    &:hover {
+      background-color: darken($white, 5)
+    }
     @media (min-width: 750px) {
       padding: 2rem;
     }
