@@ -1,0 +1,72 @@
+@import "../assets/stylesheets/main.css";
+@import "_colours";
+
+
+body {
+  background: #f7f7f7;
+  .row {
+    padding: 0 0 2rem 0;
+    @media (min-width: 750px) {
+      padding: 0 0 10rem 0;
+    }
+  }
+  header {
+    &.wrap {
+      background: $white;
+    }
+    span {
+      float: right;
+      vertical-align: middle;
+      height: 46px;
+      line-height: 46px;
+      @media (min-width: 750px) {
+        height: 92px;
+        line-height: 92px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.widget {
+  position: relative;
+  margin: 0 0 6rem 0;
+  > a.hide {
+    font-size: 0.8rem;
+    float: right;
+    color: inherit;
+    border-bottom-color: inherit;
+  }
+}
+
+a.card {
+    width: 100%;
+    margin-bottom: 0.6rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    display: block;
+    color: inherit;
+    box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
+    background: $white;
+    padding: 1rem;
+    border-bottom-color: $offwhite-highlighted-bg;
+    &:hover {
+      background-color: darken($white, 5)
+    }
+    @media (min-width: 750px) {
+      padding: 2rem;
+    }
+    p {
+      padding-bottom: 1rem;
+      margin: 0;
+      @media (min-width: 750px) {
+        padding-bottom: 2rem;
+      }
+      a {
+        font-family: 'AvenirNextLTW01-Medium';
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+}
