@@ -47,7 +47,12 @@ stylesheet: '2017-08-21'
             <p>Later life inspiration from other Co-op members and social meetups.</p>
             <h2>Join Co-op and get back in control</h2>
             <p>Enter your email address and we&rsquo;ll get in touch with your ???</p>
-            <p>[WHAT HAPPENS]</p>
+            <div class="page-1">
+              <p>You've told us you're moving home. We can help with that.</p>
+              <label for="email">Your email:</label>
+              <input id="email" type="email"><br />
+              <%= link_to 'Continue', 'consent', :class => 'btn btn-primary' %>
+            </div>
             <p>If the future seems uncertain, your files are in a mess and you don&rsquo;t know how much is in your pension - you&rsquo;re not alone. Let&rsquo;s start talking about the things that are important to us - and that can be a little uncomfortable - and take control of our futures today.</p>
           </div>
         </div>
