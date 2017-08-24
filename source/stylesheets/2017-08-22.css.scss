@@ -90,6 +90,25 @@ input {
   }
 }
 
+.prop-intro {
+  div.column {
+    img {
+      @media (max-width: 460px) {
+        max-width: 16rem;
+      }
+      @media (min-width: 750px) {
+        margin-left: -2rem;
+      }
+    }
+    h2, p, li {
+      max-width: 24rem;
+      @media (min-width: 750px) {
+        max-width: 19rem;
+      }
+    }
+  }
+}
+
 a.card {
     width: 100%;
     margin-bottom: 0.6rem;
