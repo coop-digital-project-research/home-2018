@@ -1,0 +1,78 @@
+---
+stylesheet: '2017-08-21'
+---
+
+<nav class="skip-nav">
+  <ul>
+    <li><a href="#main" title="Skip to main content">Skip to content</a></li>
+  </ul>
+</nav>
+
+<div class="app-content">
+  <div class="content-wrapper">
+
+    <header class="wrap header-main header-design-manual">
+      <a class="coop-logo" aria-label="Homepage" href="index.html">
+        <img src="<%= image_path 'assets/images/logos/coop-logo.svg' %>" alt="Co-op">
+      </a>
+      <span>Jake</span>
+    </header>
+
+    <main id="main" class="main">
+      <article class="wrap">
+        <div class="row margin-bh">
+          <div class="column large-12">
+            <h1>Learn and share new skills</h1>
+            <div class="row event-pair">
+              <div class="widget column large-6">
+                <% link_to "try-something-new.html", class: "card" do %>
+                  <div class="content">
+                    <h2>Learn wood turning with John</h2>
+                    <h3><%= lorem.date('%A, %b %d') %></h3>
+                  </div>
+                  <figure style="background-image: url('<%= image_path 'images/man-with-white-beard.jpg' %>')"></figure>
+                <% end %>
+              </div>
+              <div class="widget column large-6">
+                <% link_to "try-something-new.html", class: "card" do %>
+                  <div class="content">
+                    <h2>Perfect public speaking with Jacqueline</h2>
+                    <h3><%= lorem.date('%A, %b %d') %></h3>
+                  </div>
+                  <figure style="background-image: url('<%= image_path 'https://randomuser.me/api/portraits/women/31.jpg' %>')"></figure>
+                <% end %>
+              </div>
+            </div>
+            <div class="row event-pair">
+              <div class="widget column large-6">
+                <% link_to "try-something-new.html", class: "card" do %>
+                  <div class="content">
+                    <h2>Learn guitar with Gareth</h2>
+                    <h3><%= lorem.date('%A, %b %d') %></h3>
+                  </div>
+                  <figure style="background-image: url('<%= image_path 'images/man-with-beard-next-to-hedge.jpg' %>')"></figure>
+                <% end %>
+              </div>
+              <div class="widget column large-6">
+                <% link_to "try-something-new.html", class: "card stencil" do %>
+                  <div class="content">
+                    <h2>Got something you could share?</h2>
+                    <p>
+                      Pastry perfectionist? Meticuluous mechanic? Want to share your experience with other members and earn a bit of extra income?
+                    </p>
+                    <button class="btn btn-primary">Find out more</button>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+<script src="assets/javascript/main.js"></script>

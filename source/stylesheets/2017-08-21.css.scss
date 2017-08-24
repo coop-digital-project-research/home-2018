@@ -23,6 +23,8 @@ body {
 }
 
 .widget {
+  display: block;
+  flex: 1;
   position: relative;
   margin: 0 0 6rem 0;
   > a.hide {
@@ -33,20 +35,27 @@ body {
   }
 }
 
-a.card {
-    width: 100%;
-    margin-bottom: 0.6rem;
-    border-radius: 0.2rem;
-    overflow: hidden;
-    display: block;
-    color: inherit;
-    box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
-    background: $white;
+.card {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  display: block;
+  color: inherit;
+  box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
+  background: $white;
+  border-bottom-color: $offwhite-highlighted-bg;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: space-between;
+  &.stencil {
+    border-style: dashed;
+    background: none;
+    border-color: darken($offwhite-highlighted-bg, 20);
+  }
+  div.content {
     padding: 1rem;
-    border-bottom-color: $offwhite-highlighted-bg;
-    &:hover {
-      background-color: darken($white, 5)
-    }
     @media (min-width: 750px) {
       padding: 2rem;
     }
@@ -63,4 +72,33 @@ a.card {
         padding-bottom: 0;
       }
     }
+  }
+  figure {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    min-width: 80px;
+    width: 100%;
+    max-width: 140px;
+    display: block;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
 }
+
+a.card {
+  &:hover {
+    border-bottom-color: darken($offwhite-highlighted-bg, 10);
+    background-color: darken($white, 5);
+    button {
+      background-color: darken($white, 5);
+    }
+  }
+}
+
+.event-pair {
+  display: flex;
+  align-items: stretch;
+}
+
