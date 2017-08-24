@@ -28,6 +28,37 @@ body {
   }
 }
 
+input {
+  &.show-hide {
+    display: none;
+    ~ div.more-info {
+      display: none;
+    }
+    ~ label {
+      font-size: 1rem;
+      color: $button-primary-dark;
+      &:after {
+        content: '▼';
+        position: relative;
+        width: auto;
+        display: inline;
+        font-size: 0.8rem;
+        margin-left: 0.4rem;
+      }
+    }
+    &:checked {
+      ~ div.more-info {
+        display: block;
+      }
+      ~ label {
+        &:after {
+          content: '▲';
+        }
+      }
+    }
+  }
+}
+
 .widget {
   position: relative;
   margin: 0 0 6rem 0;
