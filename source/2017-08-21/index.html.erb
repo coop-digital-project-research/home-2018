@@ -62,8 +62,12 @@ stylesheet: '2017-08-21'
               <div class="card">
                 <div class="content">
                   <h2>What do you want to do with your future?</h2>
-                  <p><input type="text"></input></p>
-                  <p><button class="btn-primary">Commit to this</button></p>
+                  <div class="ui-widget">
+                    <p><input type="text" id="goal"></input></p>
+                  </div>
+                  <p style='margin-top: 0.5em;'>
+                    <%= link_to "Commit to this", "goal", class: "btn btn-primary" %>
+                  </p>
                   <p>John wants to <%= link_to "open a bar", "goal/?g=open_a_bar" %>, Alanna wants to <%= link_to "go on a road trip", "goal/?g=go-on-a-road-trip" %>, Paul wants to <%= link_to "write more better", "goal/?g=write-more-better" %>, Rachel wants to <%= link_to "build my dream house", "goal/?g=build-my-dream-house" %>...</p>
                 </div>
               </div>
@@ -98,3 +102,17 @@ stylesheet: '2017-08-21'
 <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
 <script src="assets/javascript/main.js"></script>
+<%= javascript_include_tag 'jquery-ui-1.12.1.custom/jquery-ui.min.js' %>
+<%= stylesheet_link_tag 'jquery-ui-1.12.1.custom/jquery-ui.min.css' %>
+<script>
+  $( function() {
+    var availableTags = [
+      "Sing in front of a crowd",
+      "Sing opera"
+    ];
+    $( "#goal" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
