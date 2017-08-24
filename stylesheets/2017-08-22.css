@@ -92,3 +92,20 @@ a.card {
       font-family: 'AvenirNextLTW01-Medium'; }
     a.card p:last-child {
       padding-bottom: 0; }
+
+.landscape-device {
+  background: #ffffff;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 2px 5px 2px #e6e6e6;
+          box-shadow: 0 2px 5px 2px #e6e6e6;
+  border-bottom-color: #e6e6e6; }
+
+.portrait-device {
+  background: #ffffff;
+  height: 40em;
+  padding: 3rem 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 2px 5px 2px #e6e6e6;
+          box-shadow: 0 2px 5px 2px #e6e6e6;
+  border-bottom-color: #e6e6e6; }
