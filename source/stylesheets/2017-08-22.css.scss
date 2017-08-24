@@ -118,6 +118,11 @@ section#features {
     &:not(:last-of-type) {
       border-bottom: 1px solid lighten($darker-grey,50%);
     }
+    .column {
+      h2, p {
+        max-width: 24rem;
+      }
+    }
   }
 }
 
