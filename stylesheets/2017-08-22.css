@@ -1,0 +1,57 @@
+@import url(../assets/stylesheets/main.css);
+body {
+  background: #f7f7f7; }
+  body .row {
+    padding: 0 0 2rem 0; }
+    @media (min-width: 750px) {
+      body .row {
+        padding: 0 0 10rem 0; } }
+  body header.wrap {
+    background: #ffffff; }
+  body header span {
+    float: right;
+    vertical-align: middle;
+    height: 46px;
+    line-height: 46px; }
+    @media (min-width: 750px) {
+      body header span {
+        height: 92px;
+        line-height: 92px;
+        font-size: 1.2rem; } }
+
+.widget {
+  position: relative;
+  margin: 0 0 6rem 0; }
+  .widget > a.hide {
+    font-size: 0.8rem;
+    float: right;
+    color: inherit;
+    border-bottom-color: inherit; }
+
+a.card {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  display: block;
+  color: inherit;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  background: #ffffff;
+  padding: 1rem;
+  border-bottom-color: #e6e6e6; }
+  a.card:hover {
+    background-color: #f2f2f2; }
+  @media (min-width: 750px) {
+    a.card {
+      padding: 2rem; } }
+  a.card p {
+    padding-bottom: 1rem;
+    margin: 0; }
+    @media (min-width: 750px) {
+      a.card p {
+        padding-bottom: 2rem; } }
+    a.card p a {
+      font-family: 'AvenirNextLTW01-Medium'; }
+    a.card p:last-child {
+      padding-bottom: 0; }

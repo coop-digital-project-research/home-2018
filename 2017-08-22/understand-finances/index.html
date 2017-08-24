@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+  <script src="./Tangle.js"></script>
+
+	<link rel="stylesheet" href="./TangleKit/TangleKit.css" type="text/css">
+	<script type="text/javascript" src="./TangleKit/mootools.js"></script>
+	<script type="text/javascript" src="./TangleKit/sprintf.js"></script>
+	<script type="text/javascript" src="./TangleKit/BVTouchable.js"></script>
+	<script type="text/javascript" src="./TangleKit/TangleKit.js"></script>
+</head>
+
+<style>
+
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.situation-text > p {
+  font-size: 24px;
+}
+
+</style>
+
+<body>
+
+<div id="chart" />
+
+<div class="situation-text">
+
+  <p>I'm 46 years old.</p>
+
+  <p>I earn £1900 a month, spend <span class="TKAdjustableNumber TKAdjustableNumberDown" data-var="monthlySpend" data-format="£%d" data-min="100" data-max="5000" data-step="50"></span> and save <span data-var="monthlySave" data-format="£%d"></span>.</p>
+
+  <p>If I stop teaching at <span class="TKAdjustableNumber TKAdjustableNumberDown" data-var="stopTeachingAt" data-min="48" data-max="100"></span>, my pension will give an income of <span data-var="monthlyPension" data-format="£%d"></span> per month.</p>
+
+</div>
+
+</body>
+
+<script src="../../assets/javascript/vendor/d3.v3.min.js"></script>
+
+<script>
+
+
+var tangle = new Tangle(document, {
+    initialize: function () {
+      this.monthlySpend = 1900;
+      this.stopTeachingAt = 65;
+      this.monthlyPension = 1000;
+      this.monthlySave = 0;
+    },
+    update: function () {
+      this.monthlyPension = calculateMonthlyPension(this.stopTeachingAt);
+      this.monthlySave = 1900 - this.monthlySpend;
+		  drawChart({
+        monthlySpend: this.monthlySpend,
+        monthlySave: this.monthlySave,
+        stopTeachingAt: this.stopTeachingAt
+      });
+    }
+});
+
+
+function calculateSalaryAt(age, tangleParameters) {
+  if(age <= tangleParameters.stopTeachingAt) {
+     return 1900;  // TODO: magic number :(
+  } else {
+    return 0;
+  }
+}
+
+function calculatePensionAt(age, tangleParameters) {
+  if(age <= tangleParameters.stopTeachingAt) {
+     return 0;
+  } else {
+    return calculateMonthlyPension(tangleParameters.stopTeachingAt);
+  }
+}
+
+function calculateSavingsIncomeAt(age, tangleParameters) {
+  if(age <= tangleParameters.stopTeachingAt) {
+     return 0;
+  } else {
+    return calculateMonthlySavingsIncome(tangleParameters);
+  }
+}
+
+function calculateMonthlyPension(stopTeachingAt) {
+
+  if(stopTeachingAt <= 65) {
+    return 500 + ((stopTeachingAt - 45) * 30);
+
+  } else {
+    return 1100;
+  }
+}
+
+function calculateMonthlySavingsIncome(tangleParameters) {
+  var yearsOfSaving = tangleParameters.stopTeachingAt - 45,
+      monthlyContribution = 1900 - tangleParameters.monthlySpend,
+      potSize = monthlyContribution * yearsOfSaving * 12;
+
+  console.log("yearsOfSaving: ", yearsOfSaving, " monthlyContribution: ", monthlyContribution, " potSize: ", potSize);
+
+  // range between 300 and 500 from 45 - 65
+  return (potSize * 0.04) / 12;  // 4% safe withdrawal rate
+}
+
+
+function drawChart(tangleParameters) {
+  console.log("drawChart(tangleParameters): ", tangleParameters);
+
+  var data = [];
+
+  for(var age = 47 ; age <= 70 ; age++) {
+    data.push({
+      age: String(age),
+      salary: calculateSalaryAt(age, tangleParameters),
+      pension: calculatePensionAt(age, tangleParameters),
+      savings_income: calculateSavingsIncomeAt(age, tangleParameters),
+    });
+  }
+
+  /*
+  var data = [
+      {age: '48', salary: 1417, pension: 0, savings_income: 0},
+      {age: '49', salary: 1417, pension: 0, savings_income: 0},
+      {age: '50', salary: 1417, pension: 0, savings_income: 0},
+      {age: '51', salary: 1417, pension: 0, savings_income: 0},
+      {age: '52', salary: 0, pension: 1100, savings_income: 0},
+      {age: '53', salary: 0, pension: 1100, savings_income: 0},
+      {age: '54', salary: 0, pension: 1100, savings_income: 0},
+      {age: '55', salary: 0, pension: 1100, savings_income: 0},
+      {age: '56', salary: 0, pension: 1100, savings_income: 0},
+      {age: '57', salary: 0, pension: 1100, savings_income: 0},
+      {age: '58', salary: 0, pension: 1100, savings_income: 0},
+      {age: '59', salary: 0, pension: 1100, savings_income: 0},
+      {age: '60', salary: 0, pension: 1100, savings_income: 0},
+      {age: '61', salary: 0, pension: 1100, savings_income: 500},
+      {age: '62', salary: 0, pension: 1100, savings_income: 500},
+      {age: '63', salary: 0, pension: 1100, savings_income: 500},
+      {age: '64', salary: 0, pension: 1100, savings_income: 500},
+      {age: '65', salary: 0, pension: 1100, savings_income: 500},
+      {age: '66', salary: 0, pension: 1100, savings_income: 500},
+      {age: '67', salary: 0, pension: 1100, savings_income: 500},
+      {age: '68', salary: 0, pension: 1100, savings_income: 500},
+      {age: '69', salary: 0, pension: 1100, savings_income: 500},
+      {age: '70', salary: 0, pension: 1100, savings_income: 500},
+  ];
+  */
+
+
+  var xData = ["salary", "pension", "savings_income"];
+
+  var margin = {top: 20, right: 50, bottom: 30, left: 50},
+          width = 800 - margin.left - margin.right,
+          height = 400 - margin.top - margin.bottom;
+
+  var x = d3.scale.ordinal()
+          .rangeRoundBands([0, width], 0.05);
+
+  var y = d3.scale.linear()
+          .rangeRound([height, 0]);
+
+  var color = d3.scale.category20();
+
+  var xAxis = d3.svg.axis()
+          .scale(x)
+          .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+          .scale(y)
+          .orient("left");
+
+  var dataIntermediate = xData.map(function (c) {
+      return data.map(function (d) {
+          return {x: d.age, y: d[c]};
+      });
+  });
+
+  var dataStackLayout = d3.layout.stack()(dataIntermediate);
+    d3.select("#chart > svg").remove();
+
+  var svg = d3.select("#chart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  x.domain(dataStackLayout[0].map(function (d) {
+      return d.x;
+  }));
+
+  y.domain([0,
+      d3.max(dataStackLayout[dataStackLayout.length - 1],
+              function (d) { return d.y0 + d.y;})
+      ])
+    .nice();
+
+  var layer = svg.selectAll(".stack")
+          .data(dataStackLayout)
+          .enter().append("g")
+          .attr("class", "stack")
+          .style("fill", function (d, i) {
+              return color(i);
+          });
+
+  layer.selectAll("rect")
+          .data(function (d) {
+              return d;
+          })
+          .enter().append("rect")
+          .attr("x", function (d) {
+              return x(d.x);
+          })
+          .attr("y", function (d) {
+              return y(d.y + d.y0);
+          })
+          .attr("height", function (d) {
+              return y(d.y0) - y(d.y + d.y0);
+          })
+          .attr("width", x.rangeBand());
+
+  svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+  svg.append("g")
+  	.attr("class", "axis axis--y")
+  	.call(yAxis);
+
+  d3.select("#spendLine").remove();
+
+  var spendLineFunction = d3.svg.line()
+     .x(function(d, i) {
+       // convert e.g. {age: "69", hazel_salary: 0, odd_jobs: 0, hazel_pension: 1100, savings_income: 500}
+       // to x co-ordinate
+
+       return x(d.age);
+      })
+     .y(function(d, i) {
+       // convert e.g. {age: "69", hazel_salary: 0, odd_jobs: 0, hazel_pension: 1100, savings_income: 500}
+       // to y co-ordinate
+
+       return y(tangleParameters.monthlySpend);
+      });
+
+  svg.append("path")
+      .datum(data)
+      .attr("id", "spendLine")
+      .attr("class", "line")
+  		.attr("stroke", "black")
+  		.attr("stroke-width", 2)
+  		.attr("fill", "none")
+      .attr("d", spendLineFunction);
+}
+
+
+
+</script>

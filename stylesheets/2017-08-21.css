@@ -1,0 +1,95 @@
+@import url(../assets/stylesheets/main.css);
+body {
+  background: #f7f7f7; }
+  body header.wrap {
+    background: #ffffff; }
+  body header span {
+    float: right;
+    vertical-align: middle;
+    height: 46px;
+    line-height: 46px; }
+    @media (min-width: 750px) {
+      body header span {
+        height: 92px;
+        line-height: 92px;
+        font-size: 1.2rem; } }
+
+.widget {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  margin: 0 0 6rem 0; }
+  .widget > a.hide {
+    font-size: 0.8rem;
+    float: right;
+    color: inherit;
+    border-bottom-color: inherit; }
+
+.card {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  display: block;
+  color: inherit;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  background: #ffffff;
+  border-bottom-color: #e6e6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .card.stencil {
+    border-style: dashed;
+    background: none;
+    border-color: #b3b3b3; }
+  .card div.content {
+    padding: 1rem; }
+    @media (min-width: 750px) {
+      .card div.content {
+        padding: 2rem; } }
+    .card div.content p {
+      padding-bottom: 1rem;
+      margin: 0; }
+      @media (min-width: 750px) {
+        .card div.content p {
+          padding-bottom: 2rem; } }
+      .card div.content p a {
+        font-family: 'AvenirNextLTW01-Medium'; }
+      .card div.content p:last-child {
+        padding-bottom: 0; }
+  .card figure {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    min-width: 80px;
+    width: 100%;
+    max-width: 140px;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+
+a.card:hover {
+  border-bottom-color: #cdcdcd;
+  background-color: #f2f2f2; }
+  a.card:hover button {
+    background-color: #f2f2f2; }
+
+.event-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch; }
