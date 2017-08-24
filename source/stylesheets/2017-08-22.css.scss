@@ -90,6 +90,14 @@ input {
   }
 }
 
+.prop-intro {
+  div.column {
+    h2, p, li {
+      max-width: 19rem;
+    }
+  }
+}
+
 a.card {
     width: 100%;
     margin-bottom: 0.6rem;
