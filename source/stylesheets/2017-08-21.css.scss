@@ -102,3 +102,29 @@ a.card {
   align-items: stretch;
 }
 
+.card {
+  blockquote {
+    border-radius: 0.2rem;
+    border: 1px solid $base-surfie;
+    background: lighten($base-surfie, 70);
+    margin: 1em 0;
+    padding: 1em;
+    &:before, &:after {
+      display: none;
+    }
+  }
+  .post-header {
+    display: flex;
+    .avatar {
+      border-radius: 50%;
+      border: 1px solid $base-surfie;
+      width: 4em;
+      height: 4em;
+    }
+    .post-information {
+      float: left;
+      padding-left: 1em;
+    }
+  }
+
+}
