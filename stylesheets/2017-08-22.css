@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(../assets/stylesheets/main.css);
 body {
   background: #f7f7f7; }
@@ -18,6 +19,42 @@ body {
         height: 92px;
         line-height: 92px;
         font-size: 1.2rem; } }
+
+label {
+  font-size: 1rem; }
+  @media (min-width: 750px) {
+    label {
+      font-size: 1.4rem; } }
+
+input.show-hide {
+  display: none; }
+  input.show-hide ~ div.more-info {
+    display: none; }
+  input.show-hide ~ label {
+    font-size: 1rem;
+    color: #374c63; }
+    input.show-hide ~ label:after {
+      content: '▼';
+      position: relative;
+      width: auto;
+      display: inline;
+      font-size: 0.8rem;
+      margin-left: 0.4rem; }
+  input.show-hide:checked ~ div.more-info {
+    display: block; }
+  input.show-hide:checked ~ label:after {
+    content: '▲'; }
+
+.cta-area section {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1rem; }
+  @media (min-width: 750px) {
+    .cta-area section {
+      padding: 4rem; } }
 
 .widget {
   position: relative;

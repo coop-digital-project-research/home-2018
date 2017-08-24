@@ -47,7 +47,7 @@
 </a>              <a href="#" class="hide">Hide this</a>
             </div>
             <div class="widget">
-<a href="#" class="card">                <div class="content">
+<a href="forum-example/" class="card">                <div class="content">
                   <h2>Understand your options</h2>
                   <p>Work out how your savings will support you in the future.</p>
                 </div>
@@ -65,8 +65,12 @@
               <div class="card">
                 <div class="content">
                   <h2>What do you want to do with your future?</h2>
-                  <p><input type="text"></input></p>
-                  <p><button class="btn-primary">Commit to this</button></p>
+                  <div class="ui-widget">
+                    <p><input type="text" id="goal"></input></p>
+                  </div>
+                  <p style='margin-top: 0.5em;'>
+                    <a href="goal" class="btn btn-primary">Commit to this</a>
+                  </p>
                   <p>John wants to <a href="goal/?g=open_a_bar">open a bar</a>, Alanna wants to <a href="goal/?g=go-on-a-road-trip">go on a road trip</a>, Paul wants to <a href="goal/?g=write-more-better">write more better</a>, Rachel wants to <a href="goal/?g=build-my-dream-house">build my dream house</a>...</p>
                 </div>
               </div>
@@ -97,6 +101,20 @@
 <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
 <script src="assets/javascript/main.js"></script>
+<script src="../javascripts/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<link href="../stylesheets/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" />
+<script>
+  $( function() {
+    var availableTags = [
+      "Sing in front of a crowd",
+      "Sing opera"
+    ];
+    $( "#goal" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
 
   </body>
 </html>
