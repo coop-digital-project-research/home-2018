@@ -127,7 +127,9 @@ section#features {
       > div {
         &:last-of-type {
           @media (min-width: 750px) {
-            transform: rotate(4deg);
+            img {
+              transform: rotate(4deg);
+            }
           }
         }
       }
@@ -143,7 +145,9 @@ section#features {
         &:last-of-type {
           @media (min-width: 750px) {
             text-align: center;
-            transform: rotate(-4deg);
+            img {
+              transform: rotate(-4deg);
+            }
           }
         }
       }
