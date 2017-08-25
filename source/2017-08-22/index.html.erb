@@ -45,7 +45,7 @@ stylesheet: '2017-08-22'
               <h2>Join us and get back in control</h2>
               <p>Enter your email address to get early access.</p>
               <div class="page-1">
-                <%= partial "future_brochure_signup_form" %>
+                <%= partial("future_brochure_signup_form", :locals => {:form_id => "join-form-1" }) %>
               </div>
             </section>
           </div>
@@ -142,7 +142,7 @@ stylesheet: '2017-08-22'
               <p>If the future seems uncertain, your files are in a mess and you don&rsquo;t know how much is in your pension - you&rsquo;re not alone. Let&rsquo;s start talking about the things that are important to us - and that can be a little uncomfortable - and take control of our futures today.</p>
               <p>Enter your email address to get early access.</p>
               <div class="page-1">
-                <%= partial "future_brochure_signup_form" %>
+                <%= partial("future_brochure_signup_form", :locals => {:form_id => "join-form-2" }) %>
               </div>
             </section>
           </div>
@@ -163,12 +163,17 @@ function ready(fn) {
 }
 
 
-function setupClickHandlers() {
+function setupEventHandlers() {
 
   var clickableElements = document.getElementsByClassName('track-clicks');
-    for(var i = 0 ; i < clickableElements.length ; ++i) {
-      clickableElements[i].addEventListener('click', handleClick);
-    }
+  for(var i = 0 ; i < clickableElements.length ; ++i) {
+    clickableElements[i].addEventListener('click', handleClick);
+  }
+
+  var forms = document.getElementsByTagName('form');
+  for(var i = 0 ; i < forms.length ; ++i) {
+    forms[i].addEventListener('submit', handleFormSubmit);
+  }
 }
 
 function handleClick(event) {
@@ -177,11 +182,49 @@ function handleClick(event) {
   ga('send', 'event', {
     eventCategory: 'Find out more',
     eventAction: 'click',
-    eventLabel: event.target.id  // good to make the id descriptive
+    eventLabel: clickedElement.id  // good to make the id descriptive
   });
 }
 
-ready(setupClickHandlers);
+function handleFormSubmit(event) {
+  // this is a bit tricksy, since submitting forms causes the page to unload
+  // and stop javascript running.
+  // See:
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
+
+  var form = event.target,
+      // Keeps track of whether or not the form has been submitted.
+      // This prevents the form from being submitted twice in cases
+      // where `hitCallback` fires normally.
+      formSubmitted = false;
+
+  // Prevents the browser from submitting the form
+  // and thus unloading the current page.
+  event.preventDefault();
+
+  setTimeout(submitForm, 1000);  // in case the GA hit callback never fires
+
+  function submitForm() {
+    if (!formSubmitted) {
+      formSubmitted = true;
+      console.log("calling form.submit()");
+      form.submit();
+    }
+  }
+
+  ga('send', 'event', {
+    eventCategory: 'Sign up form',
+    eventAction: 'form_submit',
+    eventLabel: form.id,
+    hitCallback: function() {
+      console.debug("Got GA event hit callback");
+      submitForm();
+    }
+  });
+
+}
+
+ready(setupEventHandlers);
 
 </script>
 
