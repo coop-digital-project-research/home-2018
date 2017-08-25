@@ -123,6 +123,16 @@ section#features {
       margin-top: 4rem;
     }
 
+    &:nth-of-type(odd) {
+      > div {
+        &:last-of-type {
+          @media (min-width: 750px) {
+            transform: rotate(4deg);
+          }
+        }
+      }
+    }
+
     &:nth-of-type(even) {
       > div {
         &.feature-desc {
@@ -133,6 +143,7 @@ section#features {
         &:last-of-type {
           @media (min-width: 750px) {
             text-align: center;
+            transform: rotate(-4deg);
           }
         }
       }
@@ -190,7 +201,7 @@ a.card {
   background: $white;
   padding: 1rem 1rem;
   border-radius: 2rem;
-  box-shadow: 0 2px 5px 2px $offwhite-highlighted-bg;
+  box-shadow: 0 20px 50px 2px $offwhite-highlighted-bg;
   border-bottom-color: $offwhite-highlighted-bg;
 }
 
@@ -199,6 +210,6 @@ a.card {
   max-height: 40rem;
   padding: 3rem 1rem;
   border-radius: 2rem;
-  box-shadow: 0 2px 5px 2px $offwhite-highlighted-bg;
+  box-shadow: 0 20px 50px 2px $offwhite-highlighted-bg;
   border-bottom-color: $offwhite-highlighted-bg;
 }
