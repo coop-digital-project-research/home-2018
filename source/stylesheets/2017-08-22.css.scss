@@ -73,9 +73,9 @@ input {
     background: $white;
     box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
     max-width: 34rem;
-    margin: 0 auto;
     padding: 1rem;
     @media (min-width: 750px) {
+      margin: 0 auto;
       padding: 4rem;
     }
   }
