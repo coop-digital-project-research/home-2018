@@ -119,9 +119,14 @@ section#features {
     }
 
     &:nth-of-type(even) {
-      div.feature-desc {
-        @media (min-width: 750px) {
-          order: 2;
+      > div {
+        &.feature-desc {
+          @media (min-width: 750px) {
+            order: 2;
+          }
+        }
+        &:last-of-type {
+          text-align: center;
         }
       }
     }
