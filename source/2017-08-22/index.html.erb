@@ -166,9 +166,9 @@ function ready(fn) {
 function setupEventHandlers() {
 
   var clickableElements = document.getElementsByClassName('track-clicks');
-    for(var i = 0 ; i < clickableElements.length ; ++i) {
-      clickableElements[i].addEventListener('click', handleClick);
-    }
+  for(var i = 0 ; i < clickableElements.length ; ++i) {
+    clickableElements[i].addEventListener('click', handleClick);
+  }
 
   var forms = document.getElementsByTagName('form');
   for(var i = 0 ; i < forms.length ; ++i) {
