@@ -42,6 +42,7 @@ input {
       display: none;
     }
     ~ label {
+      display: inline-block;
       cursor: pointer;
       font-size: 1rem;
       color: $button-primary-dark;
@@ -72,9 +73,10 @@ input {
     background: $white;
     box-shadow: 0 2px 3px 0 $offwhite-highlighted-bg;
     max-width: 34rem;
-    margin: 0 auto;
     padding: 1rem;
+    margin: 2rem 0;
     @media (min-width: 750px) {
+      margin: 0 auto;
       padding: 4rem;
     }
   }
@@ -95,7 +97,10 @@ input {
   div.column {
     img {
       @media (max-width: 460px) {
-        max-width: 16rem;
+        max-width: 12rem;
+      }
+      @media (max-width: 749px) {
+        max-width: 18rem;
       }
       @media (min-width: 750px) {
         margin-left: -2rem;
@@ -118,6 +123,18 @@ section#features {
       margin-top: 4rem;
     }
 
+    &:nth-of-type(odd) {
+      > div {
+        &:last-of-type {
+          @media (min-width: 750px) {
+            img {
+              transform: rotate(4deg);
+            }
+          }
+        }
+      }
+    }
+
     &:nth-of-type(even) {
       > div {
         &.feature-desc {
@@ -126,12 +143,18 @@ section#features {
           }
         }
         &:last-of-type {
-          text-align: center;
+          @media (min-width: 750px) {
+            text-align: center;
+            img {
+              transform: rotate(-4deg);
+            }
+          }
         }
       }
     }
 
     div.feature-desc {
+      margin-bottom: 2rem;
       @media (min-width: 750px) {
         padding-top: 4rem;
       }
@@ -182,15 +205,15 @@ a.card {
   background: $white;
   padding: 1rem 1rem;
   border-radius: 2rem;
-  box-shadow: 0 2px 5px 2px $offwhite-highlighted-bg;
+  box-shadow: 0 20px 50px 2px $offwhite-highlighted-bg;
   border-bottom-color: $offwhite-highlighted-bg;
 }
 
 .portrait-device {
   background: $white;
-  height: 40em;
+  max-height: 40rem;
   padding: 3rem 1rem;
   border-radius: 2rem;
-  box-shadow: 0 2px 5px 2px $offwhite-highlighted-bg;
+  box-shadow: 0 20px 50px 2px $offwhite-highlighted-bg;
   border-bottom-color: $offwhite-highlighted-bg;
 }
