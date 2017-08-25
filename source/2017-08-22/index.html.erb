@@ -64,8 +64,8 @@ stylesheet: '2017-08-22'
               <p>
                 We'll help you get a grip when you don&rsquo;t have all the information at your fingertips.
               </p>
-              <input id="more-1" class="show-hide" type="checkbox" value="unchecked">
-              <label for="more-1">Find out more</label>
+              <input id="more-when-to-stop-working" class="show-hide track-clicks" type="checkbox" value="unchecked">
+              <label for="more-when-to-stop-working">Find out more</label>
               <div class="more-info">
                 <p>
                   How do you plan for the future when you don’t know what you have or how much you’ll need? Deciding whether to stop or carry on working is hard when you don’t have all the numbers. We can help you fill in the gaps, and think about your money and your work differently.
@@ -86,8 +86,8 @@ stylesheet: '2017-08-22'
               <p>
                 We'll help you keep up with old friends and make new ones when you stop work.
               </p>
-              <input id="more-2" class="show-hide" type="checkbox" value="unchecked">
-              <label for="more-2">Find out more</label>
+              <input id="more-stay-connected-and-active" class="show-hide track-clicks" type="checkbox" value="unchecked">
+              <label for="more-stay-connected-and-active">Find out more</label>
               <div class="more-info">
                 <p>
                   Having people to turn to is as important as a healthy bank balance. But making new friends and getting out there can be daunting. We can help you find interesting new things to do, and share the things you love with others like you.
@@ -102,8 +102,8 @@ stylesheet: '2017-08-22'
               <p>
                 Simple budget tools to make your dreams, both big and small, achievable.
               </p>
-              <input id="more-3" class="show-hide" type="checkbox" value="unchecked">
-              <label for="more-3">Find out more</label>
+              <input id="more-goals" class="show-hide track-clicks" type="checkbox" value="unchecked">
+              <label for="more-goals">Find out more</label>
               <div class="more-info">
                 <p>
                   Making decisions about what to do with your money, or what to do if you don’t have enough money is tough. And the jargon and complexity make it hard to understand what your options are. We can help you to make informed choices by understanding what you want - now and in the future.
@@ -123,8 +123,8 @@ stylesheet: '2017-08-22'
               <p>
                 Get later life inspiration from other Co&#8209;op&nbsp;members like you and find social&nbsp;meetups.
               </p>
-              <input id="more-4" class="show-hide" type="checkbox" value="unchecked">
-              <label for="more-4">Find out more</label>
+              <input id="more-talk-about-it" class="show-hide track-clicks" type="checkbox" value="unchecked">
+              <label for="more-talk-about-it">Find out more</label>
               <div class="more-info">
                 <p>
                   It’s easier to face the future together. You might be able to help someone with a similar problem, or get a different perspective after hearing another person’s story. Make connections with other people like you, both online and in your neighbourhood.
@@ -151,6 +151,39 @@ stylesheet: '2017-08-22'
     </main>
   </div>
 </div>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+
+function setupClickHandlers() {
+
+  var clickableElements = document.getElementsByClassName('track-clicks');
+    for(var i = 0 ; i < clickableElements.length ; ++i) {
+      clickableElements[i].addEventListener('click', handleClick);
+    }
+}
+
+function handleClick(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Find out more',
+    eventAction: 'click',
+    eventLabel: event.target.id  // good to make the id descriptive
+  });
+}
+
+ready(setupClickHandlers);
+
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
