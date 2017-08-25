@@ -59,7 +59,7 @@ stylesheet: '2017-08-22'
 
         <section id="features">
           <div class="row">
-            <div class="column large-6">
+            <div class="column large-6 feature-desc">
               <h3>Work out when you want to </br>stop&nbsp;working</h3>
               <p>
                 We'll help you get a grip when you don&rsquo;t have all the information at your fingertips.
@@ -78,10 +78,7 @@ stylesheet: '2017-08-22'
           </div>
 
           <div class="row">
-            <div class="column large-6">
-              <%= image_tag "activities.jpg", class: "portrait-device" %>
-            </div>
-            <div class="column large-6">
+            <div class="column large-6 feature-desc">
               <h3>Stay connected and active</h3>
               <p>
                 We'll help you keep up with old friends and make new ones when you stop work.
@@ -94,10 +91,13 @@ stylesheet: '2017-08-22'
                 </p>
               </div>
             </div>
+            <div class="column large-6">
+              <%= image_tag "activities.jpg", class: "portrait-device" %>
+            </div>
           </div>
 
           <div class="row">
-            <div class="column large-6">
+            <div class="column large-6 feature-desc">
               <h3>Set short and long term goals</h3>
               <p>
                 Simple budget tools to make your dreams, both big and small, achievable.
@@ -114,11 +114,9 @@ stylesheet: '2017-08-22'
               <%= image_tag "goal-setting.gif", class: "portrait-device" %>
             </div>
           </div>
+
           <div class="row">
-            <div class="column large-6">
-              <%= image_tag "forum-example-portrait.jpg", class: "landscape-device" %>
-            </div>
-            <div class="column large-6">
+            <div class="column large-6 feature-desc">
               <h3>Talk about it</h3>
               <p>
                 Get later life inspiration from other Co&#8209;op&nbsp;members like you and find social&nbsp;meetups.
@@ -130,6 +128,9 @@ stylesheet: '2017-08-22'
                   It’s easier to face the future together. You might be able to help someone with a similar problem, or get a different perspective after hearing another person’s story. Make connections with other people like you, both online and in your neighbourhood.
                 </p>
               </div>
+            </div>
+            <div class="column large-6">
+              <%= image_tag "forum-example-portrait.jpg", class: "landscape-device" %>
             </div>
           </div>
 
