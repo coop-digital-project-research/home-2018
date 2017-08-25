@@ -217,3 +217,14 @@ a.card {
   box-shadow: 0 20px 50px 2px $offwhite-highlighted-bg;
   border-bottom-color: $offwhite-highlighted-bg;
 }
+
+footer {
+  .row {
+    padding: 0;
+    p.copyright {
+      padding-top: 2rem;
+      color: #6e6e6e;
+      border-top: 1px solid lighten($darker-grey,50%);
+    }
+  }
+}
