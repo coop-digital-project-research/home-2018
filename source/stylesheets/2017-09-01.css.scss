@@ -94,25 +94,7 @@ input {
 }
 
 .prop-intro {
-  div.column {
-    img {
-      @media (max-width: 460px) {
-        max-width: 12rem;
-      }
-      @media (max-width: 749px) {
-        max-width: 18rem;
-      }
-      @media (min-width: 750px) {
-        margin-left: -2rem;
-      }
-    }
-    h2, p, li {
-      max-width: 24rem;
-      @media (min-width: 750px) {
-        max-width: 19rem;
-      }
-    }
-  }
+
 }
 
 section#features {
