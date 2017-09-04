@@ -56,10 +56,7 @@ stylesheet: '2017-09-01'
             <section>
               <h2>Tell your story, and help someone who feels alone</h2>
               <p>If you’ve had any kind of problem with debt and you’ve lived to tell the tale, your story could mean the world to someone just like you.</p>
-              <p>Tell us your email address and we’ll find someone for your to write to.</p>
-              <div class="page-1">
-                <%= partial("future_brochure_signup_form", :locals => {:form_id => "join-form-1" }) %>
-              </div>
+              <%= link_to 'Get started', 'join', :class => 'btn btn-primary' %>
             </section>
           </div>
         </div>
