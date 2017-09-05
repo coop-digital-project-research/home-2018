@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import url(../assets/stylesheets/main.css);
+body {
+  background: #f7f7f7; }
+  body .row {
+    padding: 0 0 2rem 0; }
+    @media (min-width: 750px) {
+      body .row {
+        padding: 0 0 10rem 0; } }
+  body header.wrap {
+    background: #ffffff; }
+  body header span {
+    float: right;
+    vertical-align: middle;
+    height: 46px;
+    line-height: 46px; }
+    @media (min-width: 750px) {
+      body header span {
+        height: 92px;
+        line-height: 92px;
+        font-size: 1.2rem; } }
+
+label {
+  font-size: 1rem; }
+  @media (min-width: 750px) {
+    label {
+      font-size: 1.4rem; } }
+
+input.show-hide {
+  display: none; }
+  input.show-hide ~ div.more-info {
+    display: none; }
+  input.show-hide ~ label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #374c63; }
+    input.show-hide ~ label:after {
+      content: '▼';
+      position: relative;
+      width: auto;
+      display: inline;
+      font-size: 0.8rem;
+      margin-left: 0.4rem; }
+  input.show-hide:checked ~ div.more-info {
+    display: block; }
+  input.show-hide:checked ~ label:after {
+    content: '▲'; }
+
+.cta-area section {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  max-width: 34rem;
+  padding: 1rem;
+  margin: 2rem 0; }
+  @media (min-width: 750px) {
+    .cta-area section {
+      margin: 0 auto;
+      padding: 4rem; } }
+
+.widget {
+  position: relative;
+  margin: 0 0 6rem 0; }
+  .widget > a.hide {
+    font-size: 0.8rem;
+    float: right;
+    color: inherit;
+    border-bottom-color: inherit; }
+
+section#features .row {
+  margin-top: 2rem; }
+  @media (min-width: 750px) {
+    section#features .row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-top: 4rem; } }
+  @media (min-width: 750px) {
+    section#features .row:nth-of-type(odd) > div:last-of-type img {
+      -webkit-transform: rotate(4deg);
+              transform: rotate(4deg); } }
+  @media (min-width: 750px) {
+    section#features .row:nth-of-type(even) > div.feature-desc {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2; } }
+  @media (min-width: 750px) {
+    section#features .row:nth-of-type(even) > div:last-of-type {
+      text-align: center; }
+      section#features .row:nth-of-type(even) > div:last-of-type img {
+        -webkit-transform: rotate(-4deg);
+                transform: rotate(-4deg); } }
+  section#features .row div.feature-desc {
+    margin-bottom: 2rem; }
+    @media (min-width: 750px) {
+      section#features .row div.feature-desc {
+        padding-top: 4rem; } }
+    section#features .row div.feature-desc h2, section#features .row div.feature-desc p {
+      max-width: 24rem; }
+  section#features .row:not(:last-of-type) {
+    border-bottom: 1px solid #b3b3b3; }
+
+a.card {
+  width: 100%;
+  margin-bottom: 0.6rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  display: block;
+  color: inherit;
+  -webkit-box-shadow: 0 2px 3px 0 #e6e6e6;
+          box-shadow: 0 2px 3px 0 #e6e6e6;
+  background: #ffffff;
+  padding: 1rem;
+  border-bottom-color: #e6e6e6; }
+  a.card:hover {
+    background-color: #f2f2f2; }
+  @media (min-width: 750px) {
+    a.card {
+      padding: 2rem; } }
+  a.card p {
+    padding-bottom: 1rem;
+    margin: 0; }
+    @media (min-width: 750px) {
+      a.card p {
+        padding-bottom: 2rem; } }
+    a.card p a {
+      font-family: 'AvenirNextLTW01-Medium'; }
+    a.card p:last-child {
+      padding-bottom: 0; }
+
+.landscape-device {
+  background: #ffffff;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 20px 50px 2px #e6e6e6;
+          box-shadow: 0 20px 50px 2px #e6e6e6;
+  border-bottom-color: #e6e6e6; }
+
+.portrait-device {
+  background: #ffffff;
+  max-height: 40rem;
+  padding: 3rem 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 20px 50px 2px #e6e6e6;
+          box-shadow: 0 20px 50px 2px #e6e6e6;
+  border-bottom-color: #e6e6e6; }
+
+footer .row {
+  padding: 0; }
+  footer .row p.copyright {
+    padding-top: 2rem;
+    color: #6e6e6e;
+    border-top: 1px solid #b3b3b3; }
