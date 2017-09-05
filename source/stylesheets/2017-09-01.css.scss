@@ -9,6 +9,12 @@ body {
     @media (min-width: 750px) {
       padding: 0 0 10rem 0;
     }
+    .large-6 {
+      p,h2 {
+        max-width: 400px;
+      }
+
+    }
   }
   header {
     &.wrap {
@@ -93,8 +99,19 @@ input {
   }
 }
 
-.prop-intro {
-
+@media (min-width: 750px) {
+  .alt {
+    display: flex;
+    > .column {
+      &:nth-of-type(1) {
+        order: 2;
+      }
+      &:nth-of-type(2) {
+        order: 1;
+        text-align: center;
+      }
+    }
+  }
 }
 
 section#features {
