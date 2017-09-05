@@ -36,18 +36,13 @@
             <p>If you have, you’ll know that problems with debt can make you feel very lonely.</p>
             <p>A hand written letter from someone who has been in the same situation could make all the difference (and make a change from bills and official letters).</p>
             <p>[image showing an example letter]</p>
+
+            <p><strong>The Co-op can help you write letters of support to the people that need it.</strong></p>
+
+            <p>If you’ve had any kind of problem with debt and you’ve come through it, your story could mean the world to someone just like you.</p>
           </div>
         </div>
 
-        <div class="row">
-          <div class="column large-6">
-            <h2>How it works</h2>
-            <p>Tell your story about a time when you had a debt problem. Big or small, it doesn&rsquo;t matter, it's how you came through it that's important.</p>
-            <p>We&rsquo;ll match you with someone with a similar problem who needs support, with a few details about their situation.</p>
-            <p>After that &mdash; you can write your first letter.</p>
-            <p>We can help you get started with some examples, templates and writing tips.</p>
-          </div>
-        </div>
         <div class="row">
             <div class="column large-6">
               <h2>What to write about</h2>
@@ -58,12 +53,45 @@
         </div>
 
         <div class="row">
+          <div class="column large-12">
+            <h2>How it works</h2>
+          </div>
+          <div class="column large-4">
+            <h3>1. Your profile</h3>
+            <p>You fill in a bit of background about your experience with debt and how you tackled it. Your story will help us match you with someone who could benefit from your support.</p>
+          </div>
+          <div class="column large-4">
+            <h3>2. Who can you write to</h3>
+            <p>We&rsquo;ll match you with someone with a similar challenge who needs support, with a few details about their situation. After that &mdash; you can write your first letter.</p>
+          </div>
+          <div class="column large-4">
+            <h3>3. We&rsquo;re here to help</h3>
+            <p>From how to start a letter, through to offering emotional support, we've got templates and tips to help.</p>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="column large-12 cta-area">
             <section>
               <h2>Write a letter, and help someone who's feeling alone</h2>
               <p>If you’ve had any kind of problem with debt and you’ve come through it, your story could mean the world to someone just like you.</p>
-              <a href="join" class="btn btn-primary">Get started</a>
+              <a href="join" id="get-started-1" class="btn btn-primary track-clicks">Get started</a>
             </section>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column large-6">
+            <h2>Join together to beat the taboo of debt</h2>
+            <p>The Co-op has always stood for solidarity and self-help - helping people to help themselves in times of trouble.</p>
+
+            <p>We know that many of us experience debt during our lives, and that many of us face the worry and stress that comes with it alone.</p>
+
+            <p>We believe that people can do great things when they are supported, when they feel that someone is listening.</p>
+
+            <p>Reaching out to someone who is facing a problem with no-one to turn to could help them turn things around.</p>
+
+            <p>We’re stronger, together.</p>
           </div>
         </div>
 
@@ -98,62 +126,19 @@ function setupEventHandlers() {
   for(var i = 0 ; i < clickableElements.length ; ++i) {
     clickableElements[i].addEventListener('click', handleClick);
   }
-
-  var forms = document.getElementsByTagName('form');
-  for(var i = 0 ; i < forms.length ; ++i) {
-    forms[i].addEventListener('submit', handleFormSubmit);
-  }
 }
 
 function handleClick(event) {
   var clickedElement = event.target;
 
   ga('send', 'event', {
-    eventCategory: 'Find out more',
+    eventCategory: 'Get started',
     eventAction: 'click',
     eventLabel: clickedElement.id  // good to make the id descriptive
   });
 }
 
-function handleFormSubmit(event) {
-  // this is a bit tricksy, since submitting forms causes the page to unload
-  // and stop javascript running.
-  // See:
-  // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
-
-  var form = event.target,
-      // Keeps track of whether or not the form has been submitted.
-      // This prevents the form from being submitted twice in cases
-      // where `hitCallback` fires normally.
-      formSubmitted = false;
-
-  // Prevents the browser from submitting the form
-  // and thus unloading the current page.
-  event.preventDefault();
-
-  setTimeout(submitForm, 1000);  // in case the GA hit callback never fires
-
-  function submitForm() {
-    if (!formSubmitted) {
-      formSubmitted = true;
-      console.log("calling form.submit()");
-      form.submit();
-    }
-  }
-
-  ga('send', 'event', {
-    eventCategory: 'Sign up form',
-    eventAction: 'form_submit',
-    eventLabel: form.id,
-    hitCallback: function() {
-      console.debug("Got GA event hit callback");
-      submitForm();
-    }
-  });
-
-}
-
-// ready(setupEventHandlers);
+ready(setupEventHandlers);
 
 </script>
 
@@ -165,8 +150,9 @@ function handleFormSubmit(event) {
 
   ga('create', 'UA-105074981-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
