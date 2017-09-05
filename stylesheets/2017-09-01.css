@@ -101,6 +101,9 @@ section#features .row {
   section#features .row:not(:last-of-type) {
     border-bottom: 1px solid #b3b3b3; }
 
+img.step-icon {
+  width: 60px; }
+
 a.card {
   width: 100%;
   margin-bottom: 0.6rem;
