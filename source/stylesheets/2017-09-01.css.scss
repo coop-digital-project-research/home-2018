@@ -13,7 +13,18 @@ body {
       p,h2 {
         max-width: 400px;
       }
-
+    }
+    .how-steps {
+      .step-icon {
+        margin-top: 1rem;
+        @media (min-width: 750px) {
+          margin-top: 3rem;
+          margin-bottom: 1rem;
+        }
+      }
+      p {
+        max-width: 320px;
+      }
     }
   }
   header {
