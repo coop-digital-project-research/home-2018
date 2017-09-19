@@ -1,0 +1,129 @@
+---
+stylesheet: '2017-09-19'
+---
+
+<nav class="skip-nav">
+  <ul>
+    <li><a href="#main" title="Skip to main content">Skip to content</a></li>
+  </ul>
+</nav>
+
+<div class="app-content">
+  <div class="content-wrapper">
+
+    <header class="wrap header-main header-design-manual">
+      <a class="coop-logo" aria-label="Homepage" href="index.html">
+        <img src="<%= image_path 'assets/images/logos/coop-logo.svg' %>" alt="Co-op">
+      </a>
+    </header>
+
+    <main id="main" class="main">
+      <article class="wrap">
+
+        <div class="row">
+          <div class="column large-8">
+            <h1>Get a letter from someone who&rsquo;s been in debt</h1>
+            <h2>Struggling with debt? Get a letter from someone who&rsquo;s been there and got themselves out of it</h2>
+            <p>Getting into trouble with money is a very common problem. However, if you find yourself in that situation, it can feel as though you&rsquo;re the only person who has ever had a problem with debt.</p>
+
+            <h2>Get a letter from someone who&rsquo;s been there</h2>
+            <p>We have a group of people who have been in debt and got themselves out of it. These people have come forward and said they would like to write to people who are in debt right now. Would you like to get a letter from one of these people?</p>
+
+            <p>They won&rsquo;t be able to give you financial advice or recommend any particular course of action. What they will be able to do is show you that lots of people get into difficulties with debt, and lots of them end up sorting themselves out. They&rsquo;ll be able to tell you how getting into debt felt - and how it felt to get out of it too.</p>
+
+            <p><q>I got to some very dark places and I was so embarrassed.</q></p>
+            <p><q>I know how desperately isolating and terrifying it is to not have any money at all and to feel so desperate.</q></p>
+            <p><q>I would love to explain what I went through and how much better I felt when I tackled it and faced my fears.</q></p>
+
+
+            <p>A letter from someone who&rsquo;s been there might be the inspiration you need to get yourself back on track.</p>
+
+            <h2>Helping people help each other</h2>
+            <p>At Co-op we&rsquo;re all about helping people help each other. We know that debt can make you feel isolated, and so we&rsquo;re trying out letter writing as a way to someone reach out to a stranger in trouble who might not have anyone to talk to.</p>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="column large-12">
+            <h2>How it works</h2>
+          </div>
+          <div class="how-steps">
+            <div class="column large-4">
+              <img src="<%= image_path 'images/get-letter-step-1.svg' %>" alt="Person with a speech bubble" class="step-icon" />
+              <h3>1. Get started</h3>
+              <p>Let us know if you&rsquo;d like to receive a letter from someone who&rsquo;s been in debt before.</p>
+            </div>
+            <div class="column large-4">
+              <img src="<%= image_path 'images/get-letter-step-2.svg' %>" alt="An envelope" class="step-icon" />
+              <h3>2. Get matched</h3>
+              <p>We&rsquo;ll match you to someone who&rsquo;s been in a similar situation to the one you&rsquo;re in now.</p>
+            </div>
+            <div class="column large-4">
+              <img src="<%= image_path 'images/get-letter-step-3.svg' %>" alt="Two hands holding" class="step-icon" />
+              <h3>3. Get a letter</h3>
+              <p>You don&rsquo;t need to share your address with your letter writer, or even your second name, as the letter is sent to us and we&rsquo;ll pass them on to you.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="column large-8">
+            <p>After you&rsquo;ve received your letter, we&rsquo;ll be in touch to ask you a few questions about how you found the experience.</p>
+
+            <h2>Would you like to get a letter from someone who used to be in debt?</h2>
+            <p>We need a few details to get started.</p>
+          </div>
+        </div>
+      </article>
+
+      <footer>
+        <div class="wrap">
+          <div class="row">
+            <div class="column">
+              <p class="copyright">© Co-operative Group Limited. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+function setupEventHandlers() {
+  var clickableElements = document.getElementsByClassName('track-clicks');
+  for(var i = 0 ; i < clickableElements.length ; ++i) {
+    clickableElements[i].addEventListener('click', handleClick);
+  }
+}
+
+function handleClick(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Get started',
+    eventAction: 'click',
+    eventLabel: clickedElement.id  // good to make the id descriptive
+  });
+}
+
+ready(setupEventHandlers);
+
+</script>
+
+<%= partial("google_analytics", :locals => {:tracking_code => "UA-105074981-1" }) %>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+<script src="assets/javascript/main.js"></script>
