@@ -1,0 +1,112 @@
+---
+stylesheet: '2017-09-22'
+---
+
+<nav class="skip-nav">
+  <ul>
+    <li><a href="#main" title="Skip to main content">Skip to content</a></li>
+  </ul>
+</nav>
+
+<div class="app-content">
+  <div class="content-wrapper">
+
+    <header class="wrap header-main header-design-manual">
+      <a class="coop-logo" aria-label="Homepage" href="index.html">
+        <img src="<%= image_path 'assets/images/logos/coop-logo.svg' %>" alt="Co-op">
+      </a>
+    </header>
+
+    <main id="main" class="main">
+      <article class="wrap">
+
+        <div class="row">
+          <div class="column large-12 cta-area">
+            <section>
+              <h1>Your Money Hero profile</h1>
+              <h2>Fill in your profile so that people that want to receive your support can see who is best suited for&nbsp;them</h2>
+
+              <hr>
+
+              <p>The information you provide will be made public. Please don’t write anything personally identifiable like names or places.</p>
+              <p>So that you can be most helpful as a Money Hero, all fields are required.</p>
+
+              <fieldset>
+                <div class="form-row">
+                  <label for="about-you">Write a sentence or two about yourself</label>
+                  <p class="hint">Help recipients understand a little bit about you.</p>
+                  <textarea class="address" name="about-you" id="about-you" cols="30" rows="2"></textarea>
+                </div>
+
+                <div class="form-row">
+                  <label for="current-lifestage">Describe your current stage of life</label>
+                  <p class="hint">Eg. Teenager, graduate, retired, etc.</p>
+                  <input class="address" type="text" name="current-lifestage" id="current-lifestage">
+                </div>
+
+                <div class="form-row">
+                  <label for="debt-situation">What was your debt situation?</label>
+                  <p class="hint">Write a sentence or two to help recipients understand a little about how you got into debt. It’ll help them pick someone they can relate to to receive a letter from.</p>
+                  <textarea name="debt-situation" id="debt-situation" cols="30" rows="2"></textarea>
+                </div>
+
+                <hr>
+
+                <p>That’s it for now. We’ll let people that need help choose who to reach out to based on their Money Hero profile. If you’re chosen, we’ll be in touch by email to help you through the process of writing a letter to&nbsp;them.</p>
+
+                <%= link_to 'Submit your profile', '#', :class => 'btn btn-primary' %>
+              </fieldset>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <footer>
+        <div class="wrap">
+          <div class="row">
+            <div class="column">
+              <p class="copyright">© Co-operative Group Limited. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+function setupEventHandlers() {
+  var clickableElements = document.getElementsByClassName('track-clicks');
+  for(var i = 0 ; i < clickableElements.length ; ++i) {
+    clickableElements[i].addEventListener('click', handleClick);
+  }
+}
+
+function handleClick(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Get started',
+    eventAction: 'click',
+    eventLabel: clickedElement.id  // good to make the id descriptive
+  });
+}
+
+ready(setupEventHandlers);
+
+</script>
+
+<%= partial("google_analytics", :locals => {:tracking_code => "UA-105074981-1" }) %>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+<script src="assets/javascript/main.js"></script>

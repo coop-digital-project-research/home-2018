@@ -1,0 +1,140 @@
+---
+stylesheet: '2017-09-01'
+---
+
+<nav class="skip-nav">
+  <ul>
+    <li><a href="#main" title="Skip to main content">Skip to content</a></li>
+  </ul>
+</nav>
+
+<div class="app-content">
+  <div class="content-wrapper">
+
+    <header class="wrap header-main header-design-manual">
+      <a class="coop-logo" aria-label="Homepage" href="index.html">
+        <img src="<%= image_path 'assets/images/logos/coop-logo.svg' %>" alt="Co-op">
+      </a>
+    </header>
+
+    <main id="main" class="main">
+      <article class="wrap">
+
+        <div class="row">
+          <div class="column large-12 cta-area">
+            <section>
+              <h2>Sign up to receive a letter</h2>
+              <p>Enter some details about yourself.</p>
+              <div class="page-1">
+                <%= partial("receive_a_letter_signup_form", :locals => {:form_id => "join-form-letter-1" }) %>
+              </div>
+            </section>
+          </div>
+        </div>
+
+      </article>
+      <footer>
+        <div class="wrap">
+          <div class="row">
+            <div class="column">
+              <p class="copyright">© Co-operative Group Limited. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+
+function setupEventHandlers() {
+
+  var inputElements = document.getElementsByTagName('input');
+  for(var i = 0 ; i < inputElements.length ; ++i) {
+    inputElements[i].addEventListener('focus', handleFocus);
+    inputElements[i].addEventListener('blur', handleBlur);
+  }
+
+  var forms = document.getElementsByTagName('form');
+  for(var i = 0 ; i < forms.length ; ++i) {
+    forms[i].addEventListener('submit', handleFormSubmit);
+  }
+}
+
+function handleFocus(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Form input field',
+    eventAction: 'focus',
+    eventLabel: clickedElement.id  // good to make the id descriptive
+  });
+}
+
+function handleBlur(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Form input field',
+    eventAction: 'blur',
+    eventLabel: clickedElement.id  // good to make the id descriptive
+  });
+}
+
+function handleFormSubmit(event) {
+  // this is a bit tricksy, since submitting forms causes the page to unload
+  // and stop javascript running.
+  // See:
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs/sending-hits#knowing_when_the_hit_has_been_sent
+
+  var form = event.target,
+      // Keeps track of whether or not the form has been submitted.
+      // This prevents the form from being submitted twice in cases
+      // where `hitCallback` fires normally.
+      formSubmitted = false;
+
+  // Prevents the browser from submitting the form
+  // and thus unloading the current page.
+  event.preventDefault();
+
+  setTimeout(submitForm, 1000);  // in case the GA hit callback never fires
+
+  function submitForm() {
+    if (!formSubmitted) {
+      formSubmitted = true;
+      console.log("calling form.submit()");
+      form.submit();
+    }
+  }
+
+  ga('send', 'event', {
+    eventCategory: 'Sign up form',
+    eventAction: 'form_submit',
+    eventLabel: form.id,
+    hitCallback: function() {
+      console.debug("Got GA event hit callback");
+      submitForm();
+    }
+  });
+
+}
+
+ready(setupEventHandlers);
+
+</script>
+
+<%= partial("google_analytics", :locals => {:tracking_code => "UA-105074981-1" }) %>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+<script src="assets/javascript/main.js"></script>
