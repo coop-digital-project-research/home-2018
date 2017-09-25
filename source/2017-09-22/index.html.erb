@@ -23,36 +23,37 @@ stylesheet: '2017-09-22'
         <div class="row">
           <div class="column large-12 cta-area">
             <section>
-              <h1>Your Money Hero profile</h1>
-              <h2>Fill in your profile so that people that want to receive your support can see who is best suited for&nbsp;them</h2>
+              <h1>Your profile</h1>
+              <h2>Fill in your public profile so that people that want to receive your support can see who is best suited for&nbsp;them</h2>
 
               <hr>
 
-              <p>The information you provide will be made public. Please don’t write anything personally identifiable like names or places.</p>
-              <p>So that you can be most helpful as a Money Hero, all fields are required.</p>
+              <p>The information you provide will appear on a website that anyone can visit. Don’t write anything that could identify you, such as your last name or where you live.</p>
+
+              <p>Make sure you fill in each section as we need all this information to create your profile and find a good match.</p>
 
               <fieldset>
                 <div class="form-row">
-                  <label for="about-you">Write a sentence or two about yourself</label>
-                  <p class="hint">Help recipients understand a little bit about you.</p>
-                  <textarea class="address" name="about-you" id="about-you" cols="30" rows="2"></textarea>
+                  <label for="writer-first-name">First name</label>
+                  <p class="hint">We only ask for your first name so that your identity is protected.</p>
+                  <textarea class="address" name="writer-first-name" id="writer-first-name" cols="30" rows="2"></textarea>
                 </div>
 
                 <div class="form-row">
-                  <label for="current-lifestage">Describe your current stage of life</label>
-                  <p class="hint">Eg. Teenager, graduate, retired, etc.</p>
-                  <input class="address" type="text" name="current-lifestage" id="current-lifestage">
+                  <label for="writer-age">Your age</label>
+                  <p class="hint">This will help people who want to receive a letter make a decision about who writes to them.</p>
+                  <input class="address" type="text" name="writer-age" id="writer-age">
                 </div>
 
                 <div class="form-row">
-                  <label for="debt-situation">What was your debt situation?</label>
-                  <p class="hint">Write a sentence or two to help recipients understand a little about how you got into debt. It’ll help them pick someone they can relate to to receive a letter from.</p>
-                  <textarea name="debt-situation" id="debt-situation" cols="30" rows="2"></textarea>
+                  <label for="writer-debt-situation">What was your debt situation?</label>
+                  <p class="hint">Write a couple of sentences to help recipients understand how you got into debt. This will help them pick somebody they can relate to.</p>
+                  <textarea name="writer-debt-situation" id="writer-debt-situation" cols="30" rows="2"></textarea>
                 </div>
 
                 <hr>
 
-                <p>That’s it for now. We’ll let people that need help choose who to reach out to based on their Money Hero profile. If you’re chosen, we’ll be in touch by email to help you through the process of writing a letter to&nbsp;them.</p>
+                <p>That's it for now. We'll let people that need support choose who writes to them based on their profile. If you're chosen, we'll be in touch by email to help you through the process of writing a letter to&nbsp;them.</p>
 
                 <%= link_to 'Submit your profile', '#', :class => 'btn btn-primary' %>
               </fieldset>
