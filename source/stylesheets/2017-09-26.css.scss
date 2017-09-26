@@ -54,6 +54,10 @@ body {
   }
 }
 
+fieldset {
+  margin-bottom: 4rem;
+}
+
 label {
   font-size: 1rem;
   @media (min-width: 750px) {
