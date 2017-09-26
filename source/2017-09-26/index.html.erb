@@ -24,8 +24,24 @@ stylesheet: '2017-09-26'
             <h1>Choose who you'd like yo receive a letter from</h1>
           </div>
         </div>
-      </article>
+        <div class="row">
+          <div class="column large-6">
+            <fieldset>
+              <legend>Pick up to 3:</legend>
+              <label class="block-label">
+                  <input type="checkbox" value="1" name="person-1">PersonA
+              </label>
+              <label class="block-label">
+                  <input type="checkbox" value="1" name="person-2">PersonB
+              </label>
+              <label class="block-label">
+                  <input type="checkbox" value="1" name="person-3">PersonC
+              </label>
 
+              <%= link_to 'Show more', 'join', :id => 'show-more', :class => 'btn btn-primary-dark' %>
+            </fieldset>
+          </div>
+      </article>
       <footer>
         <div class="wrap">
           <div class="row">
