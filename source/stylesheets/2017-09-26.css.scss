@@ -70,6 +70,7 @@ label {
   color: #61307D;
   font-size: 1rem;
   padding: 1rem;
+  padding: 2rem;
   margin: 1rem 0 1rem 0;
   border-left: 3px solid #61307D;
   padding: 16px 0 16px 32px;
@@ -245,6 +246,12 @@ a.card {
         padding-bottom: 0;
       }
     }
+}
+
+p {
+  &.privacy-statement {
+    margin-top: 1rem;
+  }
 }
 
 .landscape-device {
