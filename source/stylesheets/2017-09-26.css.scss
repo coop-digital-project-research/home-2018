@@ -65,7 +65,14 @@ label {
   }
 }
 
+.block-label {
+    padding: calc(16px + .1em) calc(1.4rem) calc(16px + .1em) calc(32px + 1.4em);
+}
 .writer-story {
+  @media (max-width: 750px) {
+    padding: 0.4rem 0 0 1.2rem;
+    margin-left: -2.4rem;
+  }
   font-family: 'AvenirNextLTW01-Medium';
   color: #61307D;
   font-size: 1rem;
@@ -73,7 +80,6 @@ label {
   padding: 2rem;
   margin: 1rem 0 1rem 0;
   border-left: 3px solid #61307D;
-  padding: 16px 0 16px 32px;
 }
 
 input {
