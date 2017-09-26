@@ -1,0 +1,113 @@
+---
+stylesheet: '2017-09-22'
+---
+
+<nav class="skip-nav">
+  <ul>
+    <li><a href="#main" title="Skip to main content">Skip to content</a></li>
+  </ul>
+</nav>
+
+<div class="app-content">
+  <div class="content-wrapper">
+
+    <header class="wrap header-main header-design-manual">
+      <a class="coop-logo" aria-label="Homepage" href="index.html">
+        <img src="<%= image_path 'assets/images/logos/coop-logo.svg' %>" alt="Co-op">
+      </a>
+    </header>
+
+    <main id="main" class="main">
+      <article class="wrap">
+
+        <div class="row">
+          <div class="column large-12 cta-area">
+            <section>
+              <h1>Your profile</h1>
+              <h2>Fill in your public profile so that people who need support can see who is best suited for&nbsp;them</h2>
+
+              <hr>
+
+              <p>The information you provide will appear on a website that anyone can visit. Don’t write anything that could identify you, such as your last name or where you live.</p>
+
+              <p>Make sure you fill in each section as we need all this information to create your profile and find a good match.</p>
+
+              <fieldset>
+                <div class="form-row">
+                  <label for="writer-first-name">First name</label>
+                  <p class="hint">We only ask for your first name so that your identity is&nbsp;protected.</p>
+                  <input type="text" name="writer-first-name" id="writer-first-name" required>
+                </div>
+
+                <div class="form-row">
+                  <label for="writer-age">Your age</label>
+                  <p class="hint">This will help people who want to receive a letter make a decision about who writes to them.</p>
+                  <input class="writer-age" type="number" name="writer-age" id="writer-age" required>
+                </div>
+
+                <div class="form-row">
+                  <label for="writer-debt-situation">What was your debt situation?</label>
+                  <p class="hint">Write a couple of sentences to help recipients understand how you got into debt. This will help them pick somebody they can relate to.</p>
+                  <textarea name="writer-debt-situation" id="writer-debt-situation" cols="30" rows="2" required></textarea>
+                </div>
+
+                <hr>
+
+                <p>That's it for now. We'll let people that need support choose who writes to them based on their profile. If you're chosen, we'll be in touch by email to help you through the process of writing a letter to&nbsp;them.</p>
+
+                <%= link_to 'Submit profile', '#', :class => 'btn btn-primary' %>
+              </fieldset>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <footer>
+        <div class="wrap">
+          <div class="row">
+            <div class="column">
+              <p class="copyright">© Co-operative Group Limited. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</div>
+
+<script>
+
+function ready(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+function setupEventHandlers() {
+  var clickableElements = document.getElementsByClassName('track-clicks');
+  for(var i = 0 ; i < clickableElements.length ; ++i) {
+    clickableElements[i].addEventListener('click', handleClick);
+  }
+}
+
+function handleClick(event) {
+  var clickedElement = event.target;
+
+  ga('send', 'event', {
+    eventCategory: 'Get started',
+    eventAction: 'click',
+    eventLabel: clickedElement.id  // good to make the id descriptive
+  });
+}
+
+ready(setupEventHandlers);
+
+</script>
+
+<%= partial("google_analytics", :locals => {:tracking_code => "UA-105074981-1" }) %>
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js" integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="assets/javascript/vendor/jquery-1.12.1.min.js"><\/script>')</script>
+<script src="assets/javascript/main.js"></script>
