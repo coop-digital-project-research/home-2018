@@ -20,31 +20,25 @@ stylesheet: '2017-09-26'
     <main id="main" class="main">
       <article class="wrap">
         <div class="row">
-          <div class="column large-6">
-            <h1>Choose who you'd like yo receive a letter from</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column large-6">
-            <fieldset>
-              <legend>Pick up to 3:</legend>
-              <label class="block-label">
+          <div class="column large-12 cta-area">
+            <section>
+              <h1>Choose who you'd like yo receive a letter from</h1>
+              <fieldset>
+                <legend>Pick up to 3:</legend>
+                <label class="block-label">
                   <input type="checkbox" value="1" name="person-1">PersonA
-              </label>
-              <label class="block-label">
+                </label>
+                <label class="block-label">
                   <input type="checkbox" value="1" name="person-2">PersonB
-              </label>
-              <label class="block-label">
+                </label>
+                <label class="block-label">
                   <input type="checkbox" value="1" name="person-3">PersonC
-              </label>
+                </label>
 
-              <%= link_to 'Show more', '#', :id => 'show-more', :class => 'btn btn-primary-dark' %>
-            </fieldset>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column large-6">
-            <%= link_to 'Make selection', '#', :id => 'make-selection', :class => 'btn btn-primary' %>
+                <%= link_to 'Show more', '#', :id => 'show-more', :class => 'btn btn-primary-dark' %>
+              </fieldset>
+              <%= link_to 'Confirm selection', 'confirmed', :id => 'confirm-selection', :class => 'btn btn-primary' %>
+            </section>
           </div>
         </div>
       </article>
