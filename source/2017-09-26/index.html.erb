@@ -26,13 +26,40 @@ stylesheet: '2017-09-26'
               <fieldset>
                 <legend>Pick up to 3:</legend>
                 <label class="block-label">
-                  <input type="checkbox" value="1" name="person-1">PersonA
+                  <input type="checkbox" value="1" name="person-1">
+                  <span class="writer-name">
+                    PersonA
+                  </span>,
+                  <span class="writer-age">
+                    52
+                  </span>
+                  <p class="writer-story">
+                    Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. The steam pouring from under her vivid hair gave the impression that her whole head was on fire.
+                  </p>
                 </label>
                 <label class="block-label">
-                  <input type="checkbox" value="1" name="person-2">PersonB
+                  <input type="checkbox" value="1" name="person-2">
+                  <span class="writer-name">
+                    PersonB
+                  </span>,
+                  <span class="writer-age">
+                    26
+                  </span>
+                  <p class="writer-story">
+                    They reported that the Slytherin team was no more than seven greenish blurs, shooting through the air like missiles.
+                  </p>
                 </label>
                 <label class="block-label">
-                  <input type="checkbox" value="1" name="person-3">PersonC
+                  <input type="checkbox" value="1" name="person-3">
+                  <span class="writer-name">
+                    PersonC
+                  </span>,
+                  <span class="writer-age">
+                    41
+                  </span>
+                  <p class="writer-story">
+                    October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students.
+                  </p>
                 </label>
                 <%= link_to 'Show more', '#', :id => 'show-more', :class => 'btn btn-primary-dark' %>
               </fieldset>
